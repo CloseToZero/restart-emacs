@@ -1,7 +1,7 @@
-;;; test-helper.el --- Tests for restart-emacs             -*- lexical-binding: t; -*-
+;;; test-helper.el --- Tests for restart-emacs2             -*- lexical-binding: t; -*-
 
 ;;; Commentary:
-;;; Helpers to write tests for restart-emacs
+;;; Helpers to write tests for restart-emacs2
 
 ;;; Code:
 

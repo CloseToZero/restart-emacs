@@ -46,14 +46,14 @@ HOME=/tmp
 SUCCESS=1
 
 # Name that should be given Emacs window, makes easier to search for window
-EMACS_WIN_NAME=restart-emacs-test
+EMACS_WIN_NAME=restart-emacs2-test
 
 # Setup things so that Emacs window is renamed appropriately after starting
 mkdir -p /tmp/.emacs.d/
 printf "(modify-frame-parameters nil (list (cons 'name \"$EMACS_WIN_NAME\")))" > /tmp/.emacs.d/init.el
 
 # Launch Emacs
-cask exec emacs -l restart-emacs.el > /dev/null 2>&1 &
+cask exec emacs -l restart-emacs2.el > /dev/null 2>&1 &
 
 if poll_emacs_started ; then
     EMACS_WINDOW_ID=$(xwininfo -name $EMACS_WIN_NAME | grep 'Window id:' | awk -F' ' '{print $4}')
@@ -66,7 +66,7 @@ if poll_emacs_started ; then
     echo "Asking Emacs to restart .. "
     xdotool search --name $EMACS_WIN_NAME key alt+x
     sleep 1
-    xdotool search --name $EMACS_WIN_NAME type 'restart-emacs'
+    xdotool search --name $EMACS_WIN_NAME type 'restart-emacs2'
     sleep 1
     xdotool search --name $EMACS_WIN_NAME key Return
 

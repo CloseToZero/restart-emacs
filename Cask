@@ -1,7 +1,7 @@
 (source gnu)
 (source melpa)
 
-(package-file "restart-emacs.el")
+(package-file "restart-emacs2.el")
 (files "*.el")
 
 (development
